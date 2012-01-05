@@ -1,9 +1,9 @@
 <?php
 /*
- * this is the main controller where all afro-controller need to inherit
+ * this is the main controller where all controller need to inherit
  *   the __construct can accept one input which is the $section
  *     - NULL   mean the public afro shopping (assume $section = public)
- *     - admin  mean the admin area where we can manage inventory/stock/sale/report
+ *     - admin  mean the admin area where we can manage hotel/tracking/report
  */
 class MY_Controller extends CI_Controller{
 	
@@ -62,7 +62,7 @@ class MY_Controller extends CI_Controller{
      */
     public function getFooter(){
     	return array(
-    	    		'copyright' => 'copyright 2011 afrofunk clothing, all right is reserved',
+    	    		'copyright' => 'copyright 2011 CheckInHotelDeals, all right is reserved',
     	            );
     }
     
@@ -85,7 +85,9 @@ class MY_Controller extends CI_Controller{
     	if ($result->status)
     		$result->data = $object;
     	
+    	//slow down result just for testing
     	sleep(0.7);
+    	
     	echo(json_encode($result));
     }
     

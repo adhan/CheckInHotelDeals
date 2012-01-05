@@ -12,7 +12,8 @@ class Home extends MY_Controller{
         
         //load all neccesary main data
         $data = array(
-        			   'parameter' => NULL,
+        			   'header' => NULL,
+        			   'footer' => NULL,
         			 );
 
         //load page template

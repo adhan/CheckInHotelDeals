@@ -18,30 +18,9 @@ class Test extends MY_Controller{
         echo 'test page';
     }
     
-    /*
-     * controller for selected product id (route from product/$id to this method view($id))
-     */
     public function view($id){
 		echo('id: '.$id);
     }
-    
-    public function viewall(){
-        $this->load->model('ProductModel');
-        
-        // ******** prefer array as I think we can use some useful array functionallity **********
-        echo 'using result as array<br>';
-        foreach($this->ProductModel->getCategoryListArray() as $category){
-            echo $category['id'].' - '.$category['name'].'<br>';
-        }
-        
-        
-        echo 'using result as object<br>';
-        foreach($this->ProductModel->getCategoryListObject() as $category){
-            echo $category->id.' - '.$category->name.'<br>';
-        }
-        
-    }
-    
     
     public function cache_save(){
     	$this->load->driver('cache');
